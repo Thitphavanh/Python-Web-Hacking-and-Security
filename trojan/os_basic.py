@@ -37,6 +37,18 @@ for f in result_file:
     # print(current, '------>', file_path)
     file_dict[f] = {'current': current, 'next': file_path}
 
-for fk, fv in file_dict.items():
-    current = fv['current']
-    next_path = fv['next']
+
+while True:
+	for fk, fv in file_dict.items():
+		current = fv['current']
+		next_path = fv['next']
+		shutil.move(current, next_path)
+
+		select = random.choice(result_folder)
+		folder_path = os.path.join(path, select)
+		file_next = os.path.join(folder_path, fk)
+		file_dict[fk]['current'] = next_path
+		file_dict[fk]['next'] = file_next
+	time.sleep(3)
+
+
